@@ -8,4 +8,15 @@ class ShoppingListItem {
   check() {
     return (this.isDone = true);
   }
+
+  uncheck() {
+    return (this.isDone = false);
+  }
+
+  render() {
+    //backtick stylee
+    return `<li class="completed_${this.isDone}".<span>${
+      this.name
+    }</span><span>${this.description}</span></li>`;
+  }
 }
