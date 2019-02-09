@@ -2,6 +2,7 @@ chai.should();
 const expect = chai.expect;
 const assert = chai.assert;
 
+//shopping list item tests
 describe("Shopping List Item Test", () => {
   it("ShoppingListItem should be a ShoppingListItem should b a function", () => {
     // const ShoppingListItem = new ShoppingListItem();
@@ -70,5 +71,13 @@ describe("Item should have a method named render", () => {
   it("Items render method should return a html string", function() {
     var beans = new ShoppingListItem("beans", "green");
     expect(beans.render()).to.include("<li", "</li>");
+  });
+});
+
+//on to the shopping list test
+
+describe("Shopping list should be a function/class", () => {
+  it("Shopping List should be a function", () => {
+    expect(ShoppingList).to.be.a("function");
   });
 });
