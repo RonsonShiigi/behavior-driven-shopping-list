@@ -1,5 +1,5 @@
 class ShoppingList {
-  //   constructor() {
-  //     this.items = [];
-  //   }
+  constructor() {
+    this.items = [];
+  }
 }

@@ -81,3 +81,16 @@ describe("Shopping list should be a function/class", () => {
     expect(ShoppingList).to.be.a("function");
   });
 });
+
+describe("Shopping List should have a property called items", () => {
+  let list = new ShoppingList();
+  it("List should have a property called items", () => {
+    expect(list).to.have.property("items");
+  });
+
+  it("List should have a constructor that sets items to an empty array", () => {
+    expect(list.items)
+      .to.be.an("array")
+      .lengthOf(0);
+  });
+});
