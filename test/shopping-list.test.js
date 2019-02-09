@@ -7,7 +7,8 @@ describe("Shopping List Item Test", () => {
     // const ShoppingListItem = new ShoppingListItem();
     expect(ShoppingListItem).to.be.a("function");
   });
-
+});
+describe("Item should have a name and a description", () => {
   it("Should have a name", function() {
     var kimchee = new ShoppingListItem("kimchee");
     kimchee.name.should.equal("kimchee");
@@ -18,17 +19,19 @@ describe("Shopping List Item Test", () => {
     kimchee.description.should.equal("A healthy and tasty treat");
   });
 
-  it("Should have a property called isDone", function() {
-    var kimchee = new ShoppingListItem("kimchee", "healthy and tasty");
-    kimchee.isDone.should.equal(false);
-  });
-
   it("Item should recieve 2 parameters and set them to name and description", function() {
     var chicken = new ShoppingListItem("chicken", "good");
     chicken.name.should.equal("chicken");
     chicken.description.should.equal("good");
   });
-
+});
+describe("Item should have a property isDone", () => {
+  it("Should have a property called isDone", function() {
+    var kimchee = new ShoppingListItem("kimchee", "healthy and tasty");
+    kimchee.isDone.should.equal(false);
+  });
+});
+describe("Item should have a method called check", () => {
   it("Check should be a method", function() {
     var chicken = new ShoppingListItem("chicken", "boom");
     expect(chicken.check).to.be.a("function");
@@ -39,7 +42,8 @@ describe("Shopping List Item Test", () => {
     milk.check();
     milk.isDone.should.equal(true);
   });
-
+});
+describe("Item should have a method named uncheck", () => {
   it("Should have a method named uncheck", function() {
     var natto = new ShoppingListItem("natto", "yummy");
     expect(natto.uncheck).to.be.a("function");
@@ -51,7 +55,8 @@ describe("Shopping List Item Test", () => {
     carrots.uncheck();
     carrots.isDone.should.equal(false);
   });
-
+});
+describe("Item should have a method named render", () => {
   it("Should have a method named render", function() {
     var milk = new ShoppingListItem("milk", "dairy");
     expect(milk.render).to.be.a("function");
