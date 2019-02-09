@@ -150,3 +150,10 @@ describe("Shopping list should have a method called removeItem", () => {
     expect(list.removeItem(buns)).to.equal(false);
   });
 });
+
+describe("ShoppingList should have a method named render", () => {
+  let list = new ShoppingList();
+  it("render should be a function", () => {
+    expect(list.render).to.be.a("function");
+  });
+});
