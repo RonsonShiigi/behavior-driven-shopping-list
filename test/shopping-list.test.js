@@ -61,4 +61,9 @@ describe("Shopping List Item Test", () => {
     var beans = new ShoppingListItem("beans", "green");
     expect(beans.render()).to.be.a("string");
   });
+
+  it("Items render method should return a html string", function() {
+    var beans = new ShoppingListItem("beans", "green");
+    expect(beans.render()).to.include("<li", "</li>");
+  });
 });
