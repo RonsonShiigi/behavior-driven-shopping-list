@@ -94,3 +94,21 @@ describe("Shopping List should have a property called items", () => {
       .lengthOf(0);
   });
 });
+
+describe("Shopping list should have a method called addItem", () => {
+  let list = new ShoppingList();
+  it("List should have a addItem method that is a function", () => {
+    expect(list.addItem).to.be.a("function");
+  });
+
+  it("addItem should put a new Shopping list item into items array", () => {
+    let carrots = new ShoppingListItem();
+    list.addItem(carrots);
+    expect(list.items[0]).to.equal(carrots);
+  });
+
+  it("addItem should only add items that are instances of Shopping List Item", () => {
+    let chicken = "chicken";
+    expect(list.addItem(chicken)).to.equal(false);
+  });
+});
