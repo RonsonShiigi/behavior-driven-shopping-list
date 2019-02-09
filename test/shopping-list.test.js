@@ -112,3 +112,41 @@ describe("Shopping list should have a method called addItem", () => {
     expect(list.addItem(chicken)).to.equal(false);
   });
 });
+
+describe("Shopping list should have a method called removeItem", () => {
+  let list = new ShoppingList();
+  let chicken = new ShoppingListItem();
+  let beef = new ShoppingListItem();
+  it("removeItem should be a function", () => {
+    expect(list.removeItem).to.be.a("function");
+  });
+
+  it("removeItem should remove item from items array", () => {
+    list.addItem(chicken);
+    list.addItem(beef);
+    list.removeItem(beef);
+    expect(list.items.length).to.equal(1);
+    expect(list.items[0]).to.equal(chicken);
+  });
+
+  it("removeItem can only remove things that are already in the items array", () => {
+    list.addItem(chicken);
+    expect(list.removeItem(beef)).to.equal(false);
+  });
+
+  it("if no item is defined when invoking removeItem, method should remove the last item in the array", () => {
+    let newList = new ShoppingList();
+    let natto = new ShoppingListItem();
+    let rice = new ShoppingListItem();
+    newList.addItem(natto);
+    newList.addItem(rice);
+    newList.removeItem();
+    expect(newList.items.length).to.equal(1);
+    expect(newList.items[0]).to.equal(natto);
+  });
+
+  it("If item to be removed is not an instance of ShoppingListItem, expect false", () => {
+    let buns = "buns";
+    expect(list.removeItem(buns)).to.equal(false);
+  });
+});
